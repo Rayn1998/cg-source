@@ -1,0 +1,22 @@
+@use 'components/App/App.scss';
+@use 'components/Main/Main.scss';
+@use 'components/Layout/Layout.scss';
+@use 'components/Layout/components/Button/Button.scss';
+@use 'components/Page/Page.scss';
+@use 'components/Page/components/FilterButton/FilterButton.scss';
+
+@use './scss/variables' as *;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: $grey;
+  background-color: $purple-dark;
+}

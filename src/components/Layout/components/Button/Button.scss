@@ -1,0 +1,12 @@
+.button {
+  min-width: 26rem;
+  min-height: 6.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10.5rem;
+
+  .button__text {
+    font-size: 4rem;
+  }
+}
