@@ -7,56 +7,64 @@ const artists = [
     image: `${artist_1}`,
     studio: 'CGF',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'compositing',
   },
   {
     position: 'Matchmove', 
     image: `${artist_2}`,
     studio: 'MRP',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'rotoscoping',
   },
   {
     position: 'Composer', 
     image: `${artist_1}`,
     studio: 'CGF',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'matchmove',
   },
   {
     position: 'Matchmove', 
     image: `${artist_2}`,
     studio: 'MRP',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'motion',
   },
   {
     position: 'Composer', 
     image: `${artist_1}`,
     studio: 'CGF',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'rigging',
   },
   {
     position: 'Matchmove', 
     image: `${artist_2}`,
     studio: 'MRP',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: '3d generalist',
   },
   {
     position: 'Composer', 
     image: `${artist_1}`,
     studio: 'CGF',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'fx',
   },
   {
     position: 'Matchmove', 
     image: `${artist_2}`,
     studio: 'MRP',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'grooming',
   },
 ]
 

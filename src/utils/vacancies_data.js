@@ -3,74 +3,84 @@ import sculpt from '../assets/images/sculpt.jpg';
 
 const vacancies = [
   {
-    position: 'Groomer', 
+    position: 'Compositing', 
     image: `${grumer}`,
     studio: 'Kemnits',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'compositing',
   },
   {
-    position: 'Sculptor', 
+    position: 'Rotoscoping', 
     image: `${sculpt}`,
     studio: 'Sluc',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'rotoscoping',
   },
   {
-    position: 'Groomer', 
+    position: 'Matchmove', 
     image: `${grumer}`,
     studio: 'Kemnits',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'matchmove',
   },
   {
-    position: 'Sculptor', 
+    position: 'Motion', 
     image: `${sculpt}`,
     studio: 'Sluc',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'motion',
   },
   {
-    position: 'Groomer', 
+    position: 'Rigging', 
     image: `${grumer}`,
     studio: 'Kemnits',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'rigging',
   },
   {
-    position: 'Sculptor', 
+    position: '3D Generalist', 
     image: `${sculpt}`,
     studio: 'Sluc',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: '3d generalist',
   },
   {
-    position: 'Sculptor', 
+    position: 'FX artist', 
     image: `${sculpt}`,
     studio: 'Sluc',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
-  },
-  {
-    position: 'Groomer', 
-    image: `${grumer}`,
-    studio: 'Kemnits',
-    rating: 5,
-    tgLink: 'https://t.me/bodolanov'
-  },
-  {
-    position: 'Sculptor', 
-    image: `${sculpt}`,
-    studio: 'Sluc',
-    rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'fx',
   },
   {
     position: 'Groomer', 
     image: `${grumer}`,
     studio: 'Kemnits',
     rating: 5,
-    tgLink: 'https://t.me/bodolanov'
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'grooming',
+  },
+  {
+    position: 'Groomer', 
+    image: `${sculpt}`,
+    studio: 'Sluc',
+    rating: 5,
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'grooming',
+  },
+  {
+    position: 'Groomer', 
+    image: `${grumer}`,
+    studio: 'Kemnits',
+    rating: 5,
+    tgLink: 'https://t.me/bodolanov',
+    categorie: 'grooming',
   },
 ];
 

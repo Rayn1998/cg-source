@@ -9,6 +9,7 @@ import artists from '../../utils/artists';
 
 const Page = () => {
 	const pageType = useSelector((state) => state.pageType.type);
+	const positionFilter = useSelector((state) => state.positionFilter.filter);
 
 	const [currentItems, setCurrentItems] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -19,10 +20,29 @@ const Page = () => {
 
 	// SEARCH
 	useEffect(() => {
-    pageType === 'jobs' 
-      ? setCurrentItems(vacancies.slice(firstIndex, lastIndex))
-      : setCurrentItems(artists.slice(firstIndex, lastIndex))
-	}, [pageType, firstIndex, lastIndex]);
+		let newItems;
+		if (pageType === 'jobs') {
+			if (positionFilter.length === 0) {
+				setCurrentItems(vacancies)
+			} else {
+				newItems = vacancies.filter((item) => {
+					return positionFilter.includes(item.categorie)
+				});
+				setCurrentItems(newItems);
+			}
+			// setCurrentItems(vacancies.slice(firstIndex, lastIndex));
+		} else if (pageType === 'artists' ) {
+			if (positionFilter.length === 0) {
+				setCurrentItems(artists)
+			} else {
+				newItems = artists.filter((item) => {
+					return positionFilter.includes(item.categorie)
+				});
+				setCurrentItems(newItems);
+			}
+			// setCurrentItems(artists.slice(firstIndex, lastIndex))
+		}
+	}, [pageType, firstIndex, lastIndex, positionFilter]);
 
 	// PAGINATION LOGIC
 	const handleNext = () => {
@@ -52,7 +72,7 @@ const Page = () => {
 					<FilterButton text='Motion' />
 					<FilterButton text='Rigging' />
 					<FilterButton text='FX' />
-					<FilterButton text='Groomer' />
+					<FilterButton text='Grooming' />
 				</div>
 				<div
 					className='divider'
@@ -77,7 +97,8 @@ const Page = () => {
 			</div>
 			<div className='page__container'>
 				{currentItems?.map((card, i) => {
-            return <Card props={card} key={i} />;
+
+					return <Card props={card} key={i} />;
         })}
 			</div>
 			<ul className='pagination'>
