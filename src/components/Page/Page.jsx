@@ -1,5 +1,8 @@
 import React from 'react';
+import Card from './components/Card/Card';
 import FilterButton from './components/FilterButton/FilterButton';
+
+import grumer from '../../assets/images/grumer.jpg';
 
 const Page = () => {
   return (
@@ -29,6 +32,7 @@ const Page = () => {
         </div>
       </div>
       <div className='page__container' >
+        <Card props={{name: 'Grumer', image: `${image}`}} />
       </div>
     </div>
   );
