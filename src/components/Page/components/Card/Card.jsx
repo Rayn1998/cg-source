@@ -1,32 +1,90 @@
-import React from 'react';
+import React, { useState, useRef, useCallback } from 'react';
+import CardButton from './components/CardButton/CardButton';
+
+import { useDispatch } from 'react-redux';
+import { openPopup } from '../../../../redux/slices/popupSlice';
+import { setCache } from '../../../../redux/slices/vacancieCache';
 
 const Card = ({props}) => {
-  const { position, studio, description, image, rating, price, _id: id } = props;
+	const cardRef = useRef();
+	const { position, studio, image, rating, tgLink } = props;
+
+	const [onMouse, setOnMouse] = useState(false);
+	const [rotateX, setRotateX] = useState(0);
+	const [rotateY, setRotateY] = useState(0);
+
+	const dispatch = useDispatch();
+
+	const moreAction = () => {
+		dispatch(openPopup());
+		dispatch(setCache(props));
+	};
+	
+	const contactAction = () => {
+		window.open(`${tgLink}`, '_blank');
+	};
+
+	const rotateCard = (e) => {
+		const node = cardRef.current;
+		const mult = 6;
+
+		const halfWidth = node.offsetWidth / 2;
+		const halfHeight = node.offsetHeight / 2;
+
+		const middleX = node.offsetLeft + halfWidth;
+		const middleY = node.offsetTop + halfHeight;
+		const x = e.clientX - middleX;
+		const y = e.clientY - middleY;
+
+		const offsetX = (x / halfWidth) * mult;
+		const offsetY = (y / halfHeight) * mult;
+
+		setRotateY(offsetX * -1);
+		setRotateX(offsetY);
+	};
+
+	const handleMouseOn = () => {
+		const node = cardRef.current;
+		node.addEventListener('mousemove', rotateCard);
+	}
+
+	const handleMouseLeave = useCallback(() => {
+		const node = cardRef.current;
+		node.removeEventListener('mousemove', rotateCard);
+		const interval = setInterval(() => {
+			setRotateX(rotateX => ((rotateX *= 0.9) * 1000) / 1000);
+			setRotateY(rotateY => ((rotateY *= 0.9) * 1000) / 1000);
+		}, 50);
+		setTimeout(() => {
+			window.clearInterval(interval);
+		}, 2000);
+	}, []);
+
 	return (
 		<div
-			className='good-item'
-			// ref={cardRef}
-			// onMouseEnter={() => {
-			// 	setOnMouse(true);
-			// 	handleMouseOn();
-			// }}
-			// onMouseLeave={() => {
-			// 	setOnMouse(false);
-			// 	handleMouseLeave();
-			// }}
-			// style={{
-			// 	transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-			// }}
+			className='vacancie'
+			ref={cardRef}
+			onMouseEnter={() => {
+				setOnMouse(true);
+				handleMouseOn();
+			}}
+			onMouseLeave={() => {
+				setOnMouse(false);
+				handleMouseLeave();
+			}}
+			style={{
+				transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+			}}
 		>
 			<div
-				className='good-item__back-anim'
-				// style={{
-				// 	visibility: onMouse ? 'visible' : 'hidden',
-				// 	transition: 'visibility 0.3s ease-in-out',
-				// }}
+				className='vacancie__back-anim'
+				style={{
+					visibility: onMouse ? 'visible' : 'hidden',
+					transition: 'visibility 0.3s ease-in-out',
+				}}
 			></div>
-			<div className='good-item__image-wrapper' /*onClick={handleClick}*/>
-				<div className='good-item__corner'></div>
+			<div className='vacancie__image-wrapper' onClick={moreAction}>
+				<div className='vacancie__corner'></div>
 				<div
 					className='image-fav'
 					// onClick={handleFav}
@@ -45,40 +103,26 @@ const Card = ({props}) => {
 					// 		: `url(${cartIcon})`,
 					// }}
 				></div>
-				<img className='good-item__image' src={image} alt='Picture' />
+				<img className='vacancie__image' src={image} alt='Picture' />
+				<div className='vacancie__status'></div>
 			</div>
-			<div className='good-item__base'>
-				<div className='good-item__base-text-wrapper'>
-					<p className='good-item__position'>{position}</p>
-					<p className='good-item__studio'>{studio}</p>
-					<p className='good-item__description'>{description}</p>
+			<div className='vacancie__base'>
+				<div className='vacancie__base-text-wrapper'>
+					<p className='vacancie__position'>{position}</p>
+					<p className='vacancie__studio'>{studio}</p>
 				</div>
-				<div className='good-item__rating'>
+				<div className='vacancie__buttons-wrapper'>
+					<CardButton text='MORE' action={moreAction}
+						// dispatch(openPopup())
+					/>
+					<CardButton text='CONTACT' action={contactAction} />
+				</div>
+				<div className='vacancie__rating'>
 					<div className='stars'>{rating}*</div>
 					<p>Reviews</p>
 				</div>
-				{/* <p className='good-item__price'>{price}$</p> */}
-				<div
-					className='good-item__buy-wrapper'
-					// style={{
-					// 	backgroundColor: (inCart && '#03b17a') || (onBuy && '#d901c366'),
-					// }}
-					// onMouseOver={() => {
-					// 	setOnBuy(true);
-					// }}
-					// onMouseLeave={() => setOnBuy(false)}
-					// onClick={handleCartClick}
-				></div>
-				<p
-					className='good-item__buy-text'
-					// onMouseOver={() => {
-					// 	setOnBuy(true);
-					// }}
-					// onMouseLeave={() => setOnBuy(false)}
-					// onClick={handleCartClick}
-				>
-					CONTACT
-				</p>
+				{/* <p className='vacancie__price'>{price}$</p> */}
+				
 			</div>
 		</div>
 	);

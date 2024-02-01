@@ -5,6 +5,8 @@
 @use 'components/Page/Page.scss';
 @use 'components/Page/components/FilterButton/FilterButton.scss';
 @use 'components/Page/components/Card/Card.scss';
+@use 'components/Page/components/Card/components/CardButton/CardButton.scss';
+@use 'components/Layout/components/VacanciePopup/VacanciePopup.scss';
 
 @use './scss/variables' as *;
 

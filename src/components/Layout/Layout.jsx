@@ -1,12 +1,16 @@
 import React from 'react';
 
+
 import Button from './components/Button/Button';
+import VacanciePopup from './components/VacanciePopup/VacanciePopup';
 
 import logo from '../../assets/images/logo.png';
 
 const Layout = ({children}) => {
+ 
   return (
     <div className='layout'>
+      <VacanciePopup />
       <div className='layout__header' >
         <img src={logo} className='layout-logo' alt='logo' />
         <div className='layout__center'>

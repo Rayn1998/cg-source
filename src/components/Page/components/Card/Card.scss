@@ -63,7 +63,7 @@
 	}
 }
 
-.good-item {
+.vacancie {
 	width: 30rem;
 	height: 40rem;
 	padding: 0.3rem;
@@ -105,7 +105,7 @@
 		);
 	}
 
-	.good-item__back-anim {
+	.vacancie__back-anim {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -133,14 +133,19 @@
 		margin: 0;
 	}
 
-	.good-item__image-wrapper {
-		// height: 75%;
-		position: relative;
-		border-radius: 1rem;
-		transform-style: preserve-3d;
-		transform: translateZ(30px);
-		overflow: hidden;
-		cursor: pointer;
+	.vacancie__image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 1rem;
+    transform-style: preserve-3d;
+    transform: translateZ(30px);
+    overflow: hidden;
+    cursor: pointer;
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		// gap: 1rem;
 
 		&::before {
 			content: '';
@@ -159,15 +164,27 @@
 			);
 		}
 
-		.good-item__image {
+		.vacancie__image {
 			width: 100%;
-			// height: 100%;
+			height: 100%;
 			object-fit: contain;
 			z-index: -4;
 			border-radius: 1rem;
 		}
 
-		.good-item__corner {
+		.vacancie__status {
+			position: absolute;
+			top: 75%;
+			left: 1rem;
+			width: 10rem;
+			height: 5rem;
+			background-color: $card-price;
+			z-index: 5;
+			border-radius: 100%;
+			filter: blur(1rem) opacity(0.5);
+		}
+
+		.vacancie__corner {
 			position: absolute;
 			top: -2rem;
 			right: -2rem;
@@ -189,13 +206,13 @@
 		}
 	}
 
-	.good-item__base {
+	.vacancie__base {
 		width: 100%;
-		height: 100%;
+		min-height: 35%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 0 1rem;
+		padding: 1rem 1rem;
 		z-index: 2;
 		position: relative;
 		border-radius: 1rem;
@@ -210,7 +227,10 @@
 		transform: translateZ(50px);
 		transform-style: preserve-3d;
 
-		.good-item__base-text-wrapper {
+		.vacancie__base-text-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
 			// max-height: 60%;
 
 			// transform-style: preserve-3d;
@@ -218,82 +238,38 @@
 			// transform: translateZ(150px);
 			overflow: hidden;
 			
-			.good-item__position {
+			.vacancie__position {
 				font-size: 2rem;
 				font-weight: bold;
 				color: $grey;
 			}
 	
-			.good-item__studio {
+			.vacancie__studio {
 				font-size: 1.6rem;
 				color: $brand-card;
 			}
-
-			.good-item__description {
-				text-overflow: ellipsis;
-				// font-size: 2rem;
-				// white-space: nowrap;
-			}
 		}
 
-		.good-item__rating {
+		.vacancie__buttons-wrapper {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+		}
+
+		.vacancie__rating {
 			display: flex;
 			gap: 1rem;
 			color: $dark_grey;
 			transform: translateZ(100px);
 		}
 
-		.good-item__price {
+		.vacancie__price {
 			width: fit-content;
 			font-size: 2rem;
 			font-weight: bold;
 			color: $card-price;
 		}
 
-		.good-item__buy-wrapper {
-			width: 15rem;
-			height: 5rem;
-			position: absolute;
-			bottom: 2rem;
-			right: 2rem;
-			background: linear-gradient(
-				250deg,
-				#81018a 0%,
-				#060c2100 50%,
-				#00a6ff63 100%
-			);
-			background-color: none;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			filter: blur(0.4rem);
-			animation: buy infinite 10s linear alternate;
-			transition: background-color 0.5s ease-in-out;
-		}
-
-		.good-item__buy-text {
-			position: absolute;
-			bottom: 3.5rem;
-			right: 5.5rem;
-			font-size: 1.6rem;
-			font-weight: 600;
-			text-shadow: 0 0 1rem $card-text-shadow, 0 0 2rem $card-text-shadow, 0 0 3rem $card-text-shadow;
-			color: $card-text-shadow;
-			cursor: pointer;
-
-			&:before {
-				content: '';
-				width: 0.01rem;
-				height: 0.01rem;
-				position: absolute;
-				bottom: 1.3rem;
-				right: 2rem;
-				z-index: -1;
-				box-shadow: none;
-				transition: box-shadow 0.5s ease-in-out;
-				border-radius: 50%;
-			}
-		}
+		
 	}
 }

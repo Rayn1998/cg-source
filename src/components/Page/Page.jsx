@@ -3,6 +3,7 @@ import Card from './components/Card/Card';
 import FilterButton from './components/FilterButton/FilterButton';
 
 import grumer from '../../assets/images/grumer.jpg';
+import sculpt from '../../assets/images/sculpt.jpg';
 
 const Page = () => {
   return (
@@ -16,6 +17,7 @@ const Page = () => {
           <FilterButton text='Motion' />
           <FilterButton text='Rigging' />
           <FilterButton text='FX' />
+          <FilterButton text='Groomer' />
         </div>
         <div className='divider' style={{backgroundColor: '#468A75', width: '0.5rem', minHeight: '100%'}}></div>
         <div className='page__specialties'>
@@ -33,32 +35,18 @@ const Page = () => {
       </div>
       <div className='page__container' >
         <Card props={{
-          position: 'Grumer', 
+          position: 'Groomer', 
           image: `${grumer}`,
           studio: 'Kemnits',
           rating: 5,
-          description: `🔥В команду KEMNITS STUDIO (http://kemnits.ru/) ищем GROOMING ARTIST’a  (уровень Senior)
-
-          Задача:
-          🔹Настройка сетапа перьев попугая, с отработкой в движении. 
-          Требуемый софт: Maya-Houdini
-          
-          ❗️Опыт работы с перьями обязателен
-          
-          От вас:
-          ☑️ Наличие опыта в кино и сериалах 
-          ☑️ Готовность начать работу в ближайшие дни
-          
-          От нас:
-          ✅ Адекватные комментарии
-          ✅ Достойная и своевременная оплата
-          ✅ Четкий пайплайн работы
-          ✅ В случае успешной совместной работы — постоянный поток заказов
-          
-          Работа удаленная. Условия обсуждаются в индивидуальном порядке.
-          
-          💬 Для обратной связи заполняйте форму: https://docs.google.com/forms/d/e/1FAIpQLSdKBYer9rUyFIdUkeEF8pdgls6ZR1eZOl65Ho_6rNRqCxxPWg/viewform?usp=sf_link
-          `
+          tgLink: 'https://t.me/bodolanov'
+          }} />
+        <Card props={{
+          position: 'Sculptor', 
+          image: `${sculpt}`,
+          studio: 'Sluc',
+          rating: 5,
+          tgLink: 'https://t.me/bodolanov'
           }} />
       </div>
     </div>
