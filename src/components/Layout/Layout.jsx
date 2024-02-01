@@ -21,6 +21,7 @@ const Layout = ({children}) => {
         <div className='layout__profile'></div>
       </div>
       {children}
+      <footer className='footer'>MEGAFOOTER</footer>
     </div>
   );
 }

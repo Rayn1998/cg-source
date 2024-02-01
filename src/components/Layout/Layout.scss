@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
+  margin-bottom: 10rem;
 
   .layout__header {
     width: 100%;
@@ -43,5 +44,10 @@
       background-size: cover;
       border-radius: 10rem;
     }
+  }
+
+  .footer {
+    font-size: 4rem;
+    background-color: #9E00FF;
   }
 }
