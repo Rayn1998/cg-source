@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Card = ({ ...props }) => {
-  const { name, brand, image, rating, price, _id: id } = props;
+const Card = ({props}) => {
+  const { position, studio, description, image, rating, price, _id: id } = props;
 	return (
 		<div
 			className='good-item'
@@ -45,15 +45,16 @@ const Card = ({ ...props }) => {
 					// 		: `url(${cartIcon})`,
 					// }}
 				></div>
-				<img className='good-item__image' /*src={image}*/ alt='Picture' />
+				<img className='good-item__image' src={image} alt='Picture' />
 			</div>
 			<div className='good-item__base'>
 				<div className='good-item__base-text-wrapper'>
-					<p className='good-item__name'>{name}</p>
-					{/* <p className='good-item__brand'>{brand}</p> */}
+					<p className='good-item__position'>{position}</p>
+					<p className='good-item__studio'>{studio}</p>
+					<p className='good-item__description'>{description}</p>
 				</div>
 				<div className='good-item__rating'>
-					{/* <div className='stars'>{rating}*</div> */}
+					<div className='stars'>{rating}*</div>
 					<p>Reviews</p>
 				</div>
 				{/* <p className='good-item__price'>{price}$</p> */}
@@ -76,7 +77,7 @@ const Card = ({ ...props }) => {
 					// onMouseLeave={() => setOnBuy(false)}
 					// onClick={handleCartClick}
 				>
-					BUY
+					CONTACT
 				</p>
 			</div>
 		</div>

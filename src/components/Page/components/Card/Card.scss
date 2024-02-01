@@ -134,7 +134,7 @@
 	}
 
 	.good-item__image-wrapper {
-		height: 75%;
+		// height: 75%;
 		position: relative;
 		border-radius: 1rem;
 		transform-style: preserve-3d;
@@ -161,8 +161,8 @@
 
 		.good-item__image {
 			width: 100%;
-			height: 100%;
-			object-fit: cover;
+			// height: 100%;
+			object-fit: contain;
 			z-index: -4;
 			border-radius: 1rem;
 		}
@@ -191,7 +191,7 @@
 
 	.good-item__base {
 		width: 100%;
-		height: 25%;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -211,19 +211,28 @@
 		transform-style: preserve-3d;
 
 		.good-item__base-text-wrapper {
+			// max-height: 60%;
+
 			// transform-style: preserve-3d;
 			// background-color: red;
 			// transform: translateZ(150px);
+			overflow: hidden;
 			
-			.good-item__name {
+			.good-item__position {
 				font-size: 2rem;
 				font-weight: bold;
 				color: $grey;
 			}
 	
-			.good-item__brand {
+			.good-item__studio {
 				font-size: 1.6rem;
 				color: $brand-card;
+			}
+
+			.good-item__description {
+				text-overflow: ellipsis;
+				// font-size: 2rem;
+				// white-space: nowrap;
 			}
 		}
 
@@ -242,7 +251,7 @@
 		}
 
 		.good-item__buy-wrapper {
-			width: 10rem;
+			width: 15rem;
 			height: 5rem;
 			position: absolute;
 			bottom: 2rem;
