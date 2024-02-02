@@ -23,24 +23,30 @@ const Page = () => {
 		let newItems;
 		if (pageType === 'jobs') {
 			if (positionFilter.length === 0) {
-				setCurrentItems(vacancies)
+				setCurrentItems(vacancies.slice(firstIndex, lastIndex));
 			} else {
 				newItems = vacancies.filter((item) => {
-					return positionFilter.includes(item.categorie)
+					if (positionFilter.includes(item.categorie) || item.soft.some((item) => positionFilter.includes(item))) {
+						return true;
+					} else {
+						return false;
+					}
 				});
 				setCurrentItems(newItems);
 			}
-			// setCurrentItems(vacancies.slice(firstIndex, lastIndex));
 		} else if (pageType === 'artists' ) {
 			if (positionFilter.length === 0) {
-				setCurrentItems(artists)
+				setCurrentItems(artists.slice(firstIndex, lastIndex));
 			} else {
 				newItems = artists.filter((item) => {
-					return positionFilter.includes(item.categorie)
+					if (positionFilter.includes(item.categorie) || item.soft.some((item) => positionFilter.includes(item))) {
+						return true;
+					} else {
+						return false;
+					}
 				});
 				setCurrentItems(newItems);
 			}
-			// setCurrentItems(artists.slice(firstIndex, lastIndex))
 		}
 	}, [pageType, firstIndex, lastIndex, positionFilter]);
 
@@ -93,6 +99,7 @@ const Page = () => {
 					<FilterButton text='Sintheyes' />
 					<FilterButton text='AE' />
 					<FilterButton text='Photoshop' />
+					<FilterButton text='C4D' />
 				</div>
 			</div>
 			<div className='page__container'>

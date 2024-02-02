@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { closePopup } from '../../../../redux/slices/popupSlice';
 import CardButton from '../../../Page/components/Card/components/CardButton/CardButton';
 
-const VacanciePopup = () => {
+const VacanciePopup = ({ close }) => {
 	const dispatch = useDispatch();
 	const popup = useSelector((state) => state.popupSlice.isOpen);
 	const cache = useSelector((state) => state.cachedSliceData.data);
@@ -14,21 +14,21 @@ const VacanciePopup = () => {
 	};
 	return (
 		<div
-			className='vacancie-popup'
+			className='popup'
 			style={{
 				visibility: popup ? 'visible' : 'hidden',
 				opacity: popup ? '1' : '0',
 			}}
 		>
 			<div
-				className='vacancie-popup__close'
+				className='popup__close'
 				style={{
 					transform: popup ? 'translateX(0)' : 'translateX(300px)',
 				}}
-				onClick={() => dispatch(closePopup())}
+				onClick={() => close()}
 			></div>
 			<div
-				className='vacancie-popup__content'
+				className='popup__content'
 				style={{
 					transform: popup
 						? 'translateY(0) scale(1)'
