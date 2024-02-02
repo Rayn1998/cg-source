@@ -18,7 +18,7 @@ $background-color: #10041e;
 $background-color-transparent: #10041ea8;
 $marine: #007a8a86;
 $purple-input: #5c0099;
-$purple-dark: #20093A;
+$purple-dark: #20093a;
 
 $purple: #560081;
 $main-bg: #000000;
@@ -78,7 +78,7 @@ $breakpoint4: 640px;
 	background-color: transparent;
 	backdrop-filter: blur(20px);
 	border: none;
-	color:$grey;
+	color: $grey;
 
 	&::before {
 		content: '';
@@ -109,4 +109,18 @@ $breakpoint4: 640px;
 	border-radius: 3rem;
 	outline: 0.2rem solid $cyan;
 	box-shadow: inset 0 0 5rem $cyan-half-opaque;
+}
+
+@mixin popup-content {
+	box-sizing: border-box;
+	width: 80vw;
+	height: 85vh;
+	background-color: $background-color;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	border-radius: 2rem;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	gap: 4rem;
 }

@@ -23,17 +23,7 @@
   }
 
   .popup__content {
-    box-sizing: border-box;
-    width: 80vw;
-    height: 80vh;
-    background-color: $background-color;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-radius: 2rem;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    gap: 4rem;
+    @include popup-content;
 
     .vacancie-popup__content-left {
       width: 50%;

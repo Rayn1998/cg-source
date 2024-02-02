@@ -24,14 +24,14 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener('keydown', closeAll);
-    return () => document.removeEventListener('keydown', closeAll);
+    document.addEventListener('keydown', handleEscClose);
+    return () => document.removeEventListener('keydown', handleEscClose);
   }, [popup]);
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<Main close={closeAll} />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile close={closeAll} />} />
       </Routes>
     </div>
   );

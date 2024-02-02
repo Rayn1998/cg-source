@@ -7,6 +7,8 @@
 @use 'components/Page/components/Card/Card.scss';
 @use 'components/Page/components/Card/components/CardButton/CardButton.scss';
 @use 'components/Layout/components/VacanciePopup/VacanciePopup.scss';
+@use 'components/Layout/components/CreateVacanciePopup/CreateVacanciePopup.scss';
+@use 'components/Layout/components/CreateArtistPopup/CreateArtistPopup.scss';
 
 @use './scss/variables' as *;
 
