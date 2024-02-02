@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Rayn1998/cg-source/static/css/main.3793bdf1.css",
+    "main.js": "/Rayn1998/cg-source/static/js/main.2d9448a1.js",
+    "static/media/rigger.jpg": "/Rayn1998/cg-source/static/media/rigger.23953d20e391fd5a52d6.jpg",
+    "static/media/sculpt.jpg": "/Rayn1998/cg-source/static/media/sculpt.8578520e074e659b1693.jpg",
+    "static/media/artist_7.jpg": "/Rayn1998/cg-source/static/media/artist_7.3fe7ac1b8f2775cf8bfa.jpg",
+    "static/media/matchmove.jpg": "/Rayn1998/cg-source/static/media/matchmove.175f61c0841e2fe4b566.jpg",
+    "static/media/artist_8.jpg": "/Rayn1998/cg-source/static/media/artist_8.3c8d920df7dd3c59c01d.jpg",
+    "static/media/artist_1.jpg": "/Rayn1998/cg-source/static/media/artist_1.af7274903cefca37e8f1.jpg",
+    "static/media/artist_3.jpg": "/Rayn1998/cg-source/static/media/artist_3.7f7f6da4d73dbc74bdd1.jpg",
+    "static/media/artist_4.jpg": "/Rayn1998/cg-source/static/media/artist_4.2bad57e04c1b515747ba.jpg",
+    "static/media/grumer.jpg": "/Rayn1998/cg-source/static/media/grumer.5617f866a92b2da25a9a.jpg",
+    "static/media/artist_5.jpg": "/Rayn1998/cg-source/static/media/artist_5.9f3a22095f401ac0168e.jpg",
+    "static/media/rotoscoper.jpg": "/Rayn1998/cg-source/static/media/rotoscoper.5d3f82d5f0b87e16bbcb.jpg",
+    "static/media/artist_2.jpg": "/Rayn1998/cg-source/static/media/artist_2.c30fe0589086f0787da7.jpg",
+    "static/media/modeler.jpg": "/Rayn1998/cg-source/static/media/modeler.23055d313f0d49a42200.jpg",
+    "static/media/artist_6.jpg": "/Rayn1998/cg-source/static/media/artist_6.a604be6df087a349c305.jpg",
+    "static/media/logo.png": "/Rayn1998/cg-source/static/media/logo.e5c43d40dbcbed389e27.png",
+    "index.html": "/Rayn1998/cg-source/index.html",
+    "main.3793bdf1.css.map": "/Rayn1998/cg-source/static/css/main.3793bdf1.css.map",
+    "main.2d9448a1.js.map": "/Rayn1998/cg-source/static/js/main.2d9448a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3793bdf1.css",
+    "static/js/main.2d9448a1.js"
+  ]
+}
